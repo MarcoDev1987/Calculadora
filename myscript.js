@@ -4,10 +4,10 @@ function loaded(){
     e.addEventListener("click", calculate)              // Assim, com o valor da Div com sinal de "=" podemos realizar o evento click
     
     let input1 = document.getElementById("Space1")     //Com este Evento é possível apertar o enter e execultar a função calculate, tanto no campo 1 quanto no campo 2
-    input1.addEventListener("keyup", PressEnter1)
+    input1.addEventListener("keyup", PressEnter)
 
     let input2 = document.getElementById("Space2")
-    input2.addEventListener("keyup", PressEnter2)
+    input2.addEventListener("keyup", PressEnter)
 }
 function PressEnter(){
     if(event.keyCode === 13){
@@ -40,8 +40,7 @@ function calculate(){
     console.log(C)
 
     if (isNaN(C) ){                                     //Utilizando a função isNaN podemos conferir se há campos que não é preenchidos por números
-        r.innerText = "Houve preenchimento incorreto dos campos"
-        r.style.display = "inline"
+        r.style.display = "none"
         
     }
     else{
