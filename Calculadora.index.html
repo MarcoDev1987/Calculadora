@@ -5,71 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-        function loaded(){
-            
-            let e = document.getElementById("Value")            // A variável e recebe o Elemento da Div que está o sinal de Igual no HTML
-            e.addEventListener("click", calculate)              // Assim, com o valor da Div com sinal de "=" podemos realizar o evento click
-            
-            let input1 = document.getElementById("Space1")     //Com este Evento é possível apertar o enter e execultar a função calculate, tanto no campo 1 quanto no campo 2
-            input1.addEventListener("keyup", PressEnter)
-
-            let input2 = document.getElementById("Space2")
-            input2.addEventListener("keyup", PressEnter)
-        }
-
-        function PressEnter(){
-            if(event.keyCode === 13){
-                calculate()
-            }
-        }
-
-        function calculate(){
-        
-            let r = document.getElementById("Answ")
-            let A = document.getElementById("Space1")
-            let B = document.getElementById("Space2")
-            let s = document.getElementById("Operation")
-
-            if(s.value == "+"){
-            var C = parseFloat(A.value.replace(',','.')) + parseFloat(B.value.replace(',','.'))
-            }
-            else if(s.value == "-"){
-                var C = parseFloat(A.value.replace(',','.')) - parseFloat(B.value.replace(',','.'))
-            }
-            else if(s.value == "x"){
-                var C = parseFloat(A.value.replace(',','.')) * parseFloat(B.value.replace(',','.'))
-            }
-            else if(s.value == "/"){
-                var C = parseFloat(A.value.replace(',','.')) / parseFloat(B.value.replace(',','.'))
-            }
-            else{
-                return 0
-            }
-            console.log(C)
-
-            if (isNaN(C) ){                                     //Utilizando a função isNaN podemos conferir se há campos que não é preenchidos por números
-                r.innerText = "Houve um preenchimento incorreto dos campos"
-                r.style.display = "inline"
-                
-            }
-            else{
-            r.innerText = C.toFixed( 2 ).replace('.',',')      //Após a conferência de que realmente é um número o resultado de C vem com decimais e é trocado o ponto pela vírgula
-            r.style.display = "inline-block" 
-            }
-        }
-
-    </script>
+    <link rel="stylesheet" type="text/css" href="estilonovo.css">
+    <script src="myscript.js"></script> 
+     
 </head>
 <body onload="loaded()" style="background-color: #acafa5">
     
 
-    <h1 style="text-align: center;"> Calculadora entre 2 números: </h1> <br> <br>
-    <input type="text" id="Space1" style="margin-left:40% ; display: inline-block; height: 40px; width: 80px; text-align: center; font-size: 20px; font-family: 'Arial Narrow'; font-weight: 500; "> 
-    <select id="Operation" style="text-align:center; height: 45px; width:60px; font-size: larger; margin-top: 40px; font-weight: 400; cursor:pointer; "> <option value="+">  +  </option> <option value="-"> - </option> <option value="x"> x </option> <br> <option value="/" > ÷ </option> </select> 
-    <input type="text" id="Space2" style=" margin-right:1%; display: inline-block;height: 40px; width: 80px;  text-align: center; font-size: 20px; font-family: 'Arial Narrow'; font-weight: 500;">
-    <div id="Value" style="display: inline-block; font-size: 25px; font-family: 'Arial Narrow', Arial, sans-serif; cursor:pointer; "> = </div>
-    <div id="Answ" style="margin-left:1% ; display: none; text-align: center; border: solid 2px black;background-color:whitesmoke; padding: 8.5px; height: 22px; width: 80px; font-size: 20px; font-family: 'Arial Narrow', Arial, sans-serif; font-weight: 500; border-radius: 5%;"> 78 </div>
+    <h1> Calculadora entre 2 números: </h1> <br> <br>
+    <input type="text" id="Space1" > 
+    <select id="Operation"> <option value="+">  +  </option> <option value="-"> - </option> <option value="x"> x </option> <br> <option value="/" > ÷ </option> </select> 
+    <input type="text" id="Space2" >
+    <div id="Value" > = </div>
+    <div id="Answ" > 78 </div>
 </body>
 
 </html>
