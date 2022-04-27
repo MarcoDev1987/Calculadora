@@ -45,6 +45,6 @@ function calculate(){
     }
     else{
     r.innerText = C.toFixed( 2 ).replace('.',',')      //Após a conferência de que realmente é um número o resultado de C vem com decimais e é trocado o ponto pela vírgula
-    r.style.display = "inline-block" 
+    r.style.display = "block" 
     }
 }
