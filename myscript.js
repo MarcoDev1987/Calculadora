@@ -12,7 +12,7 @@ function loaded(){
 function PressEnter(){
     
     if(event.keyCode === 13){
-        this.style.backgroundColor = "red"
+        
         calculate()
         
     }
