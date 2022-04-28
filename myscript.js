@@ -10,9 +10,14 @@ function loaded(){
     input2.addEventListener("keyup", PressEnter)
 }
 function PressEnter(){
+    
     if(event.keyCode === 13){
+        this.style.backgroundColor = "red"
         calculate()
+        
     }
+    
+    
 }
 
 function calculate(){
@@ -48,3 +53,4 @@ function calculate(){
     r.style.display = "block" 
     }
 }
+
